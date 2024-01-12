@@ -44,10 +44,14 @@ app.put("/todos/:id", (req, res) => {
       id: todoParamId,
       ...newTodoData,
     };
+    res.json({
+      message: "Todo Updated Successfully",
+    });
+  } else {
+    res.status(400).json({
+      message: "Todo With Given ID Not Found",
+    });
   }
-  res.json({
-    message: "Todo Updated Successfully",
-  });
 });
 
 //DELETE
@@ -59,11 +63,14 @@ app.delete("/todos/:id", (req, res) => {
 
   if (todoIndex !== -1) {
     todos.splice(todoIndex, 1);
+    res.json({
+      message: "Todo Deleted Successfully",
+    });
+  } else {
+    res.status(400).json({
+      message: "Todo With Given ID Not Found",
+    });
   }
-
-  res.json({
-    message: "Todo Deleted Successfully",
-  });
 });
 
 app.listen(port, () => {
