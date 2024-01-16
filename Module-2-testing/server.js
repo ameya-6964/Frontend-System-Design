@@ -6,9 +6,14 @@ const users = [
   { firstName: "Jayesh", age: 24 },
 ];
 
-const sortAge = (array) => {
+const sortBySmallerAge = (array) => {
   const newArray = array.sort((a, b) => a.age - b.age);
   return newArray;
 };
+const sortByBiggerAge = (array) => {
+  const newArray = array.sort((a, b) => b.age - a.age);
+  return newArray;
+};
 
-console.log(sortAge(users));
+console.log(sortBySmallerAge(users));
+console.log(sortByBiggerAge(users));
