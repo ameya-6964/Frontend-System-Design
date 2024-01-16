@@ -11,6 +11,7 @@ test("should sort the array by smaller age", () => {
 
   const sortedData = sortBySmallerAge(users);
   expect(sortedData[0].age).toBe(21);
+  expect(sortedData[sortedData.length - 1].age).toBe(28);
 });
 
 test("should sort the array by bigger age", () => {
